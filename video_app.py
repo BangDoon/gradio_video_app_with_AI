@@ -4,7 +4,6 @@ from torch.autograd import Variable
 from utils import *
 from networks import *
 import cv2
-from torchvision import transforms
 import os
 from tqdm import tqdm
 
@@ -74,7 +73,7 @@ def read_video(video_path):
         denosing_frame = deNosing(frame)
         denosing_frame = cv2.cvtColor(denosing_frame, cv2.COLOR_RGB2BGR)
 
-        denosing_frame = cv2.resize(frame, dsize=(frame_width, frame_height), fx=0, fy=0) 
+        denosing_frame = cv2.resize(denosing_frame, dsize=(frame_width, frame_height), fx=0, fy=0) 
 
         out.write(denosing_frame)
 
