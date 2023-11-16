@@ -27,7 +27,7 @@ def deNosing(noise_img):
     if iscuda:
         y = y.cuda()
 
-    with torch.no_grad(): #
+    with torch.no_grad(): 
         if iscuda:
             torch.cuda.synchronize()
 
